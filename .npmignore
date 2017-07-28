@@ -1,0 +1,8 @@
+/demo
+/coverage
+/node_modules
+/umd
+/src
+npm-debug.log*
+
+CONTRIBUTING.md
