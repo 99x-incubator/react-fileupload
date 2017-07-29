@@ -83,6 +83,8 @@ Use `npm run clean` for delete built resources.
 npm start
 ```
 
+Demo app will start on [http://localhost:3000](http://localhost:3000)
+
 ### Publish to NPM
 
 Update the version in `package.json`;
