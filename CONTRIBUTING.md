@@ -1,25 +1,19 @@
-## Prerequisites
+# Contributing Guidelines
 
-[Node.js](http://nodejs.org/) >= v4 must be installed.
+First of all, thanks for taking the time to contribute!
 
-## Installation
+Before starting to work on an issue, please go through the existing issues and pull requests to make sure no one is working on the same issue at the time.
 
-- Running `npm install` in the components's root directory will install everything you need for development.
+Once you select a task to work on, please mention that in the issue to let others to know you are working on that. If it's a new issue, please create an issue and do as same.
 
-## Demo Development Server
+## Setting up the development environment
 
-- `npm start` will run a development server with the component's demo app at [http://localhost:3000](http://localhost:3000) with hot module reloading.
+If you are not a member of the [@99xt](https://github.com/99xt) github orginzation, you should fork this repository, make changes in your own fork, and then submit a pull-request. 
 
-## Running Tests
+If you are a member, you can just clone the repostory and making the changes, and then submit a pull-request.
 
-- `npm test` will run the tests once.
+Before sending the pull-request, please make sure nothing has broken in the app with the new changes you made.
 
-- `npm run test:coverage` will run the tests and produce a coverage report in `coverage/`.
+### Pull requests
 
-- `npm run test:watch` will run the tests on every change.
-
-## Building
-
-- `npm run build` will build the component for publishing to npm and also bundle the demo app.
-
-- `npm run clean` will delete built resources.
+Please add related issue title and number in your PR title, also include necessary information, testing procedures etc.
