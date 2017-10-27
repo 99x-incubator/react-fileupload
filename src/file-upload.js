@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import classnames from 'classnames';
-
-import './file-upload.css';
+import DefaultComponent from "./components/default";
 
 export default class extends Component {
   constructor(props) {
@@ -16,13 +14,13 @@ export default class extends Component {
     };
   }
 
-  reset() {
+  reset = () => {
     this.setState({
       status: 'ready'
     });
   }
 
-  onDragEnter(evt) {
+  onDragEnter = (evt) => {
     evt.preventDefault();
     evt.stopPropagation();
 
@@ -31,7 +29,7 @@ export default class extends Component {
     });
   }
 
-  onDragOver(evt) {
+  onDragOver = (evt) => {
     evt.preventDefault();
     evt.stopPropagation();
 
@@ -40,7 +38,7 @@ export default class extends Component {
     });
   }
 
-  onDrop(evt) {
+  onDrop = (evt) => {
     evt.preventDefault();
     evt.stopPropagation();
 
@@ -53,11 +51,11 @@ export default class extends Component {
       this.uploadFiles(files);
   }
 
-  onClickFileInput(evt) {
+  onClickFileInput = (evt) => {
     this.fileUploadInput.value = null;
   }
 
-  onSelectFiles(evt) {
+  onSelectFiles = (evt) => {
     evt.preventDefault();
     evt.stopPropagation();
 
@@ -70,11 +68,11 @@ export default class extends Component {
       this.uploadFiles(files);
   }
 
-  clickFileInput() {
+  clickFileInput = () => {
     this.fileUploadInput.click();
   }
 
-  uploadFiles(files) {
+  uploadFiles = (files) => {
       let error = false;
       const errorMessages = [];
 
@@ -120,22 +118,32 @@ export default class extends Component {
   }
 
   render() {
+    const { renderUI } = this.props;
+    const { status } = this.state;
+    const props = {
+      status
+    };
+
     return (
-      <div className="rfup-container" onClick={this.clickFileInput.bind(this)}>
+      <div onClick={this.clickFileInput}>
         <div
-          className={ classnames('rfup-dropzone', `rfup-${this.state.status}`) }
-          onDragEnter={ this.onDragEnter.bind(this) }
-          onDragOver={ this.onDragOver.bind(this) }
-          onDrop={ this.onDrop.bind(this) }
+          onDragEnter={ this.onDragEnter }
+          onDragOver={ this.onDragOver }
+          onDrop={ this.onDrop }
+          style={{position: 'relative'}}
         >
-          <input
-            ref={ fpi => this.fileUploadInput = fpi }
-                type="file"
-                className="rfup-file-input"
-                onClick={ this.onClickFileInput.bind(this) }
-                onChange={ this.onSelectFiles.bind(this) }
-                multiple={ this.state.multiple }
-          />
+            {
+              (renderUI && typeof renderUI === 'function') ? (renderUI(props)) : (<DefaultComponent {...props} />)
+            }
+            
+            <input
+              ref={ fpi => this.fileUploadInput = fpi }
+              type="file"
+              onClick={ this.onClickFileInput }
+              onChange={ this.onSelectFiles }
+              multiple={ this.state.multiple }
+              style={{position: 'absolute', left: '45%', top: '45%', visibility: 'hidden'}}
+            />
         </div>
       </div>
     );
