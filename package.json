@@ -1,6 +1,6 @@
 {
   "name": "@99xt/react-fileupload",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "react-fileupload React component",
   "main": "lib/index.js",
   "module": "es/index.js",
