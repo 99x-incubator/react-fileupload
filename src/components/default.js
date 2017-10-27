@@ -1,10 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import "./default.css";
+
+const defaultStyles = {
+  border: "2px dashed #ccc",
+  textAlign: "center",
+  padding: "50px"
+};
+
+const statusTargetedStyles = {
+  ready: {
+    backgroundColor: '#fff'
+  },
+  dragenter: {
+    backgroundColor: '#eee'
+  },
+  dragover: {
+    backgroundColor: '#f5f5f5'
+  },
+  drop: {
+    backgroundColor: '#ccc'
+  }
+};
 
 const DefaultComponent = ({ status }) => (
-  <div className={classnames("dropzone", `${status}`)}>
+  <div style={{...defaultStyles, ...statusTargetedStyles[status]}}>
     <p>Click or drag n drop your file(s) here.</p>
   </div>
 );

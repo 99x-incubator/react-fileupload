@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 
-import FileUpload from "../../src";
+import FileUpload from "../../lib";
 import "./index.css";
 
 class Demo extends Component {
