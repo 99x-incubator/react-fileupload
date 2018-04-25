@@ -1,7 +1,7 @@
 # @99xt/react-fileupload
 
 [![npm (scoped)](https://img.shields.io/npm/v/@99xt/react-fileupload.svg)](https://www.npmjs.com/package/@99xt/react-fileupload)
-[![license](https://img.shields.io/github/license/99xt/react-fileupload.svg)](https://github.com/99xt/react-fileupload/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/99xt-incubator/react-fileupload.svg)](https://github.com/99xt-incubator/react-fileupload/blob/master/LICENSE)
 
 Simpler file upload implementation for react.js apps.
 
